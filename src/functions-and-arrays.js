@@ -33,9 +33,9 @@ function findLongestWord(array) {
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(array) {
-  if (array.length === 0) {
-    return 0;
-  }
+  // if (array.length === 0) {
+  //   return 0;
+  // } no hace falta
   let suma = 0;
   for (let i = 0; i < array.length; i++) {
     suma += array[i];
@@ -101,50 +101,61 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray(array) {}
-//   console.log(array);
-//   let uniquifyArray = [];
-//   let repeat = true;
-//   for (let i = 0; i < array.length; i++) {
-//     uniquifyArray.push(array[i]);
-//   }console.log(uniquifyArray)
-// if (array.length === 0) {
-//     return null;
-//   }
+function uniquifyArray(array) {
+  console.log(array);
+  let uniqArray = [];
+  let repeat = true;
+  let index = [];
 
-// for (let i = 0; i < array.length; i++) {
-//   const element = array[i];
+  if (array.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    uniqArray.push(array[i]);
+  }
+  console.log(uniqArray);
+
   
-//   for (let j = 0; j < array.length; j++) {
-//     elemento = array[j];
-//     ind = array.indexOf(elemento, j + 1);
-//     console.log(elemento)
-//     console.log(ind);
-//     if (ind !== -1) {
-//       repeat = true;
-//      uniquifyArray.splice(ind,1);  
-//      ind = array.indexOf(elemento, j + 1);
-     
-//     }
-//     if(ind !== -1) {repeat = true;}
-//   }
 
+  // for (let i = 0; i < uniqArray.length; i++) {
+  //   if ()
+    
+    
+  // }
 
-// }
-//   console.log(array)
-//   console.log(uniquifyArray)
-//         return uniquifyArray;
-//       }
- 
-// console.log(array)
+  // ---------------------------------------------------
+  // for (let i = 0; i < uniqArray.length; i++) {
+  //   const element = uniqArray[i];
+
+  //   for (let j = 0; j < uniqArray.length; j++) {
+  //     element = uniqArray[j];
+  //     ind = uniqArray.indexOf(elemento, j + 1);
+  //     console.log(elemento);
+  //     console.log(ind);
+  //     if (ind !== -1) {
+  //       repeat = true;
+  //       uniqArray.splice(ind, 1);
+  //       ind = uniqArray.indexOf(elemento, j + 1);
+  //     }
+  //     if (ind !== -1) {
+  //       repeat = true;
+  //     }
+  //   }
+    
+  // }
+  // console.log(array);
+  // console.log(uniqArray);
+//-------------------------------------------
+  return uniqArray;
+}
+
 // console.log(uniquifyArray)
 //     if (!repeat) {
 //       return array;
 //     }else{
 //       return uniquifyArray;
 //     }
-  
-
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -158,10 +169,15 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist(array, word) {  
-  if (array.length === 0){return null}
-  if(array.includes(word)){return true}
-  return false
+function doesWordExist(array, word) {
+  if (array.length === 0) {
+    return null;
+  }
+  // if (array.includes(word)) {
+  //   return true;
+  // }
+  // return false;
+  return array.includes(word)
 }
 
 // Iteration #7: Count repetition
@@ -181,25 +197,23 @@ const wordsCount = [
 
 function howManyTimes(array, word) {
   let counter = 0;
-  if(array.length === 0 ){return 0}
-  if(!array.includes(word)){return 0}
-  else{
-    
-    ind = 0
-    while (ind !== -1) {
-      ind = array.indexOf(word, ind)
-      if(ind !== -1){
-        counter++;
-      ind++;
-      }            
-    }    
-    return counter;
-    }
-
-
-
+  if (array.length === 0) {
+    return 0;
   }
-
+  if (!array.includes(word)) {
+    return 0;
+  } else {
+    ind = 0;
+    while (ind !== -1) {
+      ind = array.indexOf(word, ind);
+      if (ind !== -1) {
+        counter++;
+        ind++;
+      }
+    }
+    return counter;
+  }
+}
 
 // Iteration #8: Bonus
 const matrix = [
