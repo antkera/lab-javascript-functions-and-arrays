@@ -51,7 +51,6 @@ function sum() {}
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(array) {
-  console.log(array);
   if (array.length === 0) {
     return null;
   }
@@ -79,7 +78,7 @@ const wordsArr = [
 function averageWordLength(array) {
   const arr = [];
   for (let i = 0; i < array.length; i++) {
-    arr.push(array[i].length)    
+    arr.push(array[i].length);
   }
   return averageNumbers(arr);
 }
@@ -102,13 +101,50 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray(array) {
-  for (let i = 0; i < array.length; i++) {
-    if(array.includes(array[1]))
-    console.log(true)
-    
-  }
-}
+function uniquifyArray(array) {}
+//   console.log(array);
+//   let uniquifyArray = [];
+//   let repeat = true;
+//   for (let i = 0; i < array.length; i++) {
+//     uniquifyArray.push(array[i]);
+//   }console.log(uniquifyArray)
+// if (array.length === 0) {
+//     return null;
+//   }
+
+// for (let i = 0; i < array.length; i++) {
+//   const element = array[i];
+  
+//   for (let j = 0; j < array.length; j++) {
+//     elemento = array[j];
+//     ind = array.indexOf(elemento, j + 1);
+//     console.log(elemento)
+//     console.log(ind);
+//     if (ind !== -1) {
+//       repeat = true;
+//      uniquifyArray.splice(ind,1);  
+//      ind = array.indexOf(elemento, j + 1);
+     
+//     }
+//     if(ind !== -1) {repeat = true;}
+//   }
+
+
+// }
+//   console.log(array)
+//   console.log(uniquifyArray)
+//         return uniquifyArray;
+//       }
+ 
+// console.log(array)
+// console.log(uniquifyArray)
+//     if (!repeat) {
+//       return array;
+//     }else{
+//       return uniquifyArray;
+//     }
+  
+
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -122,7 +158,11 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {  
+  if (array.length === 0){return null}
+  if(array.includes(word)){return true}
+  return false
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -139,7 +179,27 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  let counter = 0;
+  if(array.length === 0 ){return 0}
+  if(!array.includes(word)){return 0}
+  else{
+    
+    ind = 0
+    while (ind !== -1) {
+      ind = array.indexOf(word, ind)
+      if(ind !== -1){
+        counter++;
+      ind++;
+      }            
+    }    
+    return counter;
+    }
+
+
+
+  }
+
 
 // Iteration #8: Bonus
 const matrix = [
